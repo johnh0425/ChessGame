@@ -45,7 +45,51 @@ The Open-Closed Principles allow the software entities to be open for extension 
 The Interface Segregation Principle is when the client should never be forced to implement an interface that it doesn’t use, or clients shouldn’t be forced to depend on methods they do not use. In the project, each specific chess piece inherits from a piece class. Since all pieces in a chess board can take a piece or are able to move, these functions are placed into the parent Piece class so all chess pieces can inherit. For functions unique to each piece like a rook and king being able to castle, these function implementations are created within the specific Rook children class that inherits from the Piece class. Overall the main idea is that high-level classes do not depend on low-level classes. This implementation of the ISP helps stop the code from being more bloated.
 
 > Game Terminal Visuals\
+> User screen prompt and first user input.
 > 
+> <img width="500" alt="image" src="https://github.com/johnh0425/ChessGame/assets/116481391/732002d0-5042-41d4-9afb-862d51247db0">
+>
+> 
+> Prevent any moves that keep you in check
+>
+> 
+> <img width="500" alt="image" src="https://github.com/johnh0425/ChessGame/assets/116481391/ab5a2753-9a1b-493c-b17a-5f3010f8f4b1">
+>
+> 
+> Player 1 (WHITE) puts Player 2 (BLACK) in checkmate
+>
+> 
+> <img width="500" alt="image" src="https://github.com/johnh0425/ChessGame/assets/116481391/76219610-e995-4aa0-9e30-4fa663098bf4">
+>
+> WHITE: Invalid move is inputted
+>
+> 
+> <img width="500" alt="image" src="https://github.com/johnh0425/ChessGame/assets/116481391/6a98fc1c-162d-401e-a2db-19575775d51b">
+>
+> WHITE performs a castle move with King and Rook
+>
+> 
+> <img width="500" alt="image" src="https://github.com/johnh0425/ChessGame/assets/116481391/74770da4-9f5e-4384-b19a-dce99ec319ff">
+>
+> Cannot make moves that puts yourself in check
+>
+> 
+> <img width="500" alt="image" src="https://github.com/johnh0425/ChessGame/assets/116481391/bb6ef55f-3e4d-48b4-9b58-2e30a48de27d">
+>
+> BLACK cannot move WHITE pieces
+>
+> 
+> <img width="500" alt="image" src="https://github.com/johnh0425/ChessGame/assets/116481391/d5311aad-ca25-448e-821b-4b87b1464a49">
+>
+> Player 2 (BLACK) puts Player 1 (WHITE) in checkmate
+>
+> 
+> <img width="500" alt="image" src="https://github.com/johnh0425/ChessGame/assets/116481391/5722a2f3-e689-4cc0-9b00-8e93096a10c8">
+>
+> WHITE promotes a Pawn to a Queen
+>
+> 
+> <img width="500" alt="image" src="https://github.com/johnh0425/ChessGame/assets/116481391/467acd03-d963-40cb-9048-f42f9f7788ca">
 
 > Installation/Usage\
 > Compile and run in the terminal using g++ and ./a.out, or using CMakeLists and cmake to compile. Then the user will be prompted if they wish to play a game with another user. At the start of a game, the chess board will be printed, the white team at the bottom of the board and the black team at the top. The chess board acts as a grid with an x and y-axis. Following the standard rules of chess, the white moves first. The player on the white team will be prompted for the x coordinate of the piece that they want to move, followed by the y coordinate. If an invalid coordinate is entered for either value, the user will be prompted to enter a new value. The program will then ask for the x and y coordinates of where the user would like that piece to move, similar to the previous prompts. Upon a valid entry, the piece will be moved and the board will be reprinted to show the change. The game will then alternate between black and white for their respective turns until a checkmate is achieved by either side and the game is brought to an end.
